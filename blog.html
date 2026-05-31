@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Sacred Spoon Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header sticky" id="header" style="background-color: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); box-shadow: var(--shadow-sm);">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="image/logo3.jpg" alt="Sacred Spoon Logo">
+                <span>Sacred Spoon</span>
+            </a>
+        </div>
+
+        <nav class="nav" id="navbar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="blog.html" class="nav-link active">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <button class="icon-btn" id="search-btn" aria-label="Search food">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="icon-btn" id="user-btn" aria-label="User Account">
+                <i class="ri-user-line"></i>
+            </button>
+            <button class="icon-btn" id="wishlist-btn" aria-label="Favorites">
+                <i class="ri-heart-line"></i>
+                <span class="badge" id="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                <i class="ri-shopping-bag-line"></i>
+                <span class="badge" id="cart-count">0</span>
+            </button>
+            <button class="bx bx-menu" id="menu-icon" aria-label="Toggle menu"></button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for pakoda, chola bhatura, samosa...">
+            <button class="close-search" id="close-search"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Sub-page Hero -->
+    <section class="sub-hero" style="background: linear-gradient(rgba(20, 10, 10, 0.7), rgba(20, 10, 10, 0.7)), url('image/bg1.jpg') no-repeat center center/cover; padding: 120px 8% 60px; text-align: center; color: var(--clr-text-light);">
+        <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 10px;">Culinary Stories</h1>
+        <p style="font-size: 1.05rem; opacity: 0.85; max-width: 600px; margin: 0 auto;">Read our recipes, tips on spices, and stories of traditional Indian gastronomy.</p>
+    </section>
+
+    <!-- Blog Details Layout -->
+    <section class="blog-page-content" style="padding: 60px 8% 80px; background-color: var(--clr-surface);">
+        <div style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: start;">
+            
+            <!-- Left Column: Blog Grid -->
+            <div class="blog-articles-grid" style="display: grid; grid-template-columns: 1fr; gap: 45px;">
+                <!-- Blog Card 1 -->
+                <div class="blog-post-row scroll-reveal" style="display: flex; gap: 24px; background: var(--clr-bg-light); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--clr-border); flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px; height: 220px; overflow: hidden;">
+                        <img src="image/bg1.jpg" alt="Spice Tempering" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                    </div>
+                    <div style="flex: 1.3; padding: 24px; display: flex; flex-direction: column; justify-content: center; min-width: 280px;">
+                        <div class="blog-meta">
+                            <span><i class="ri-calendar-line"></i> May 25, 2026</span>
+                            <span><i class="ri-user-line"></i> Chef Sharma</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; line-height: 1.3;">Demystifying Indian Spices: The Art of Tadka</h3>
+                        <p style="color: var(--clr-text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">Learn how to properly temper cumin, mustard seeds, and chilies in hot oil or ghee to release their maximum flavors and aromas.</p>
+                        <button class="read-more-btn" data-post-id="1">Read Article <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-post-row scroll-reveal" style="display: flex; gap: 24px; background: var(--clr-bg-light); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--clr-border); flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px; height: 220px; overflow: hidden;">
+                        <img src="image/chola bhatura.jpeg" alt="Chole Bhature history" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                    </div>
+                    <div style="flex: 1.3; padding: 24px; display: flex; flex-direction: column; justify-content: center; min-width: 280px;">
+                        <div class="blog-meta">
+                            <span><i class="ri-calendar-line"></i> May 18, 2026</span>
+                            <span><i class="ri-user-line"></i> Anjali Nair</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; line-height: 1.3;">How Chole Bhature Became India's Favorite Comfort Food</h3>
+                        <p style="color: var(--clr-text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">Discover the rich history of how this classic North Indian combination became a national street-food and culinary phenomenon.</p>
+                        <button class="read-more-btn" data-post-id="2">Read Article <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-post-row scroll-reveal" style="display: flex; gap: 24px; background: var(--clr-bg-light); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--clr-border); flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px; height: 220px; overflow: hidden;">
+                        <img src="image/shiv_thali.png" alt="Ayurvedic Thali Serving" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                    </div>
+                    <div style="flex: 1.3; padding: 24px; display: flex; flex-direction: column; justify-content: center; min-width: 280px;">
+                        <div class="blog-meta">
+                            <span><i class="ri-calendar-line"></i> May 10, 2026</span>
+                            <span><i class="ri-user-line"></i> Chef Patil</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; line-height: 1.3;">The Sacred Art of Thali Serving: Holistic Wellness</h3>
+                        <p style="color: var(--clr-text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6;">Explore why a traditional Indian Thali incorporates the six distinct tastes (shadrasa) for a balanced body-mind meal.</p>
+                        <button class="read-more-btn" data-post-id="3">Read Article <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar Widgets -->
+            <div class="blog-sidebar" style="display: flex; flex-direction: column; gap: 30px;">
+                <!-- search widget -->
+                <div class="sidebar-widget" style="background: var(--clr-bg-light); border: 1px solid var(--clr-border); padding: 30px; border-radius: var(--border-radius-md);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 20px; border-bottom: 2px solid var(--clr-primary); padding-bottom: 8px; width: fit-content;">Search Articles</h3>
+                    <form class="newsletter-form" id="blog-search-form" style="display:flex;">
+                        <input type="text" id="blog-search-input" placeholder="Keyword..." style="background:transparent; border:none; padding:10px; flex:1; font-family:var(--font-body); font-size:0.9rem;">
+                        <button type="submit" style="background:var(--clr-primary); border:none; width:40px; height:40px; border-radius:var(--border-radius-sm); color:var(--clr-text-light); cursor:pointer;"><i class="ri-search-line"></i></button>
+                    </form>
+                </div>
+
+                <!-- categories widget -->
+                <div class="sidebar-widget" style="background: var(--clr-bg-light); border: 1px solid var(--clr-border); padding: 30px; border-radius: var(--border-radius-md);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 20px; border-bottom: 2px solid var(--clr-primary); padding-bottom: 8px; width: fit-content;">Categories</h3>
+                    <ul style="display: flex; flex-direction: column; gap: 12px; padding: 0;">
+                        <li style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;"><a href="#" style="color:var(--clr-text-muted);">Cooking Techniques</a> <span>(3)</span></li>
+                        <li style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;"><a href="#" style="color:var(--clr-text-muted);">Traditional Recipes</a> <span>(5)</span></li>
+                        <li style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;"><a href="#" style="color:var(--clr-text-muted);">Healthy Dining</a> <span>(2)</span></li>
+                        <li style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;"><a href="#" style="color:var(--clr-text-muted);">Food History</a> <span>(4)</span></li>
+                    </ul>
+                </div>
+
+                <!-- tags cloud widget -->
+                <div class="sidebar-widget" style="background: var(--clr-bg-light); border: 1px solid var(--clr-border); padding: 30px; border-radius: var(--border-radius-md);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 20px; border-bottom: 2px solid var(--clr-primary); padding-bottom: 8px; width: fit-content;">Popular Tags</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#Spices</a>
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#Curry</a>
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#Tadka</a>
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#CholeBhature</a>
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#Ayurveda</a>
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#Thali</a>
+                        <a href="#" style="padding: 6px 12px; background:var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: var(--clr-text-muted);">#Healthy</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (<span id="cart-drawer-count">0</span>)</h3>
+            <button class="close-cart-drawer" id="close-cart-btn"><i class="ri-close-line"></i></button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items-container">
+            <div class="empty-cart-message">
+                <i class="ri-shopping-basket-line"></i>
+                <p>Your cart is empty. Let's add some delicious dishes!</p>
+                <a href="menu.html" class="btn primary-btn" id="start-shopping-btn">Explore Menu</a>
+            </div>
+        </div>
+
+        <div class="cart-footer" id="cart-footer">
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Estimated Tax (5%)</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line delivery-line">
+                <span>Delivery Charge</span>
+                <span id="cart-delivery" class="free-delivery">FREE</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>Grand Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+
+            <button class="btn primary-btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Blog Detail Modal -->
+    <div class="modal-overlay" id="blog-modal-overlay">
+        <div class="blog-modal" id="blog-modal">
+            <button class="close-modal" id="close-blog-btn"><i class="ri-close-line"></i></button>
+            <div class="blog-modal-content">
+                <div class="blog-modal-img">
+                    <img src="" alt="" id="blog-modal-image">
+                </div>
+                <div class="blog-modal-info">
+                    <span class="blog-modal-date" id="blog-modal-date">Date</span>
+                    <h2 id="blog-modal-title">Blog Title</h2>
+                    <div id="blog-modal-text">Detailed blog text...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Toast Box -->
+    <div class="alert-container" id="alert-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-box logo-box">
+                <a href="index.html" class="footer-logo">
+                    <img src="image/logo3.jpg" alt="Logo">
+                    <span>Sacred Spoon</span>
+                </a>
+                <p>Bringing you the taste of authentic Indian recipes. Hand-ground spices, traditional cooking, and a legacy of pure vegetarian gastronomy.</p>
+                <div class="symbol">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="about.html">Why Choose Us</a></li>
+                    <li><a href="blog.html">Culinary Blog</a></li>
+                    <li><a href="contact.html">Book a Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Popular Dishes</h3>
+                <ul>
+                    <li><a href="menu.html">Crispy Onion Pakoda</a></li>
+                    <li><a href="menu.html">Classic Chole Bhature</a></li>
+                    <li><a href="menu.html">Smoky Dal Tadka</a></li>
+                    <li><a href="menu.html">Steamed Veg Momos</a></li>
+                    <li><a href="menu.html">Bombay Grilled Sandwich</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box newsletter-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive discount coupons, cooking tips, and festival menu updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sacred Spoon Restaurant. All rights reserved. Made with love for Indian Culinary Heritage.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

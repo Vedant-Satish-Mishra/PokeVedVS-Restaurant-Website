@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sacred Spoon Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header sticky" id="header" style="background-color: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); box-shadow: var(--shadow-sm);">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="image/logo3.jpg" alt="Sacred Spoon Logo">
+                <span>Sacred Spoon</span>
+            </a>
+        </div>
+
+        <nav class="nav" id="navbar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <button class="icon-btn" id="search-btn" aria-label="Search food">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="icon-btn" id="user-btn" aria-label="User Account">
+                <i class="ri-user-line"></i>
+            </button>
+            <button class="icon-btn" id="wishlist-btn" aria-label="Favorites">
+                <i class="ri-heart-line"></i>
+                <span class="badge" id="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                <i class="ri-shopping-bag-line"></i>
+                <span class="badge" id="cart-count">0</span>
+            </button>
+            <button class="bx bx-menu" id="menu-icon" aria-label="Toggle menu"></button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for pakoda, chola bhatura, samosa...">
+            <button class="close-search" id="close-search"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Sub-page Hero -->
+    <section class="sub-hero" style="background: linear-gradient(rgba(20, 10, 10, 0.7), rgba(20, 10, 10, 0.7)), url('image/bg2.jpeg') no-repeat center center/cover; padding: 120px 8% 60px; text-align: center; color: var(--clr-text-light);">
+        <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 10px;">Our Culinary Legacy</h1>
+        <p style="font-size: 1.05rem; opacity: 0.85; max-width: 600px; margin: 0 auto;">Discover the values, passion, and people behind the traditional flavors of Sacred Spoon.</p>
+    </section>
+
+    <!-- Detailed Story -->
+    <section class="about-details" style="padding: 80px 8% 60px; background-color: var(--clr-surface);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <div class="scroll-reveal">
+                <span style="color:var(--clr-primary); font-weight:700; text-transform:uppercase; font-size:0.85rem; letter-spacing:2px; display:block; margin-bottom:10px;">Our Roots</span>
+                <h2 style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: var(--clr-text-dark);">Preserving Generational Recipes</h2>
+                <p style="color:var(--clr-text-muted); line-height:1.7; margin-bottom:16px;">Sacred Spoon was established with a singular objective: to bring back the wholesome, unprocessed, and vibrant taste of traditional Indian cuisine. We believe that authentic cooking is not merely about combining ingredients; it is a labor of love that pays homage to ancestral methods.</p>
+                <p style="color:var(--clr-text-muted); line-height:1.7; margin-bottom:24px;">Our kitchens operate under zero-compromise rules. We avoid chemically processed additives, artificial colors, and cheap oils. Instead, we use cold-pressed seed oils, hand-milled spices, organic vegetables, and premium grain flours to build every dish from scratch daily.</p>
+                
+                <blockquote style="border-left: 4px solid var(--clr-primary); padding: 12px 20px; font-family: var(--font-heading); font-size: 1.15rem; font-style: italic; color: var(--clr-text-dark); background-color: var(--clr-bg-light); border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0; margin-bottom: 30px;">
+                    "Food is a sacred offering that nourishes both body and mind. We serve it with utmost devotion and purity."
+                </blockquote>
+            </div>
+            
+            <div class="scroll-reveal" style="position: relative;">
+                <img src="image/bg1.jpg" alt="Chef grinding spices" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md);">
+                <div style="position: absolute; bottom: -20px; right: -20px; background-color: var(--clr-primary); color: var(--clr-text-light); padding: 24px; border-radius: var(--border-radius-md); box-shadow: var(--shadow-lg); text-align: center;">
+                    <span style="font-size: 2.2rem; font-weight: 900; display: block; line-height: 1;">10+</span>
+                    <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Years of Heritage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards & Values -->
+    <section class="values" style="padding: 80px 8%; background-color: var(--clr-bg-light); border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border);">
+        <div class="section-header">
+            <span class="tag">Kitchen Standards</span>
+            <h2>How We Cook</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <!-- standard 1 -->
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon"><i class="ri-leaf-line"></i></div>
+                <h3>100% Organic Produce</h3>
+                <p>We partner with local certified farmers to source fresh seasonal vegetables and premium high-grade pulses directly to our kitchens.</p>
+            </div>
+            <!-- standard 2 -->
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon"><i class="ri-tools-line"></i></div>
+                <h3>Hand-Ground Masalas</h3>
+                <p>We reject pre-packaged commercial spice mixes. Our chefs pulverize whole spices manually using stone grinders to preserve delicate essential oils.</p>
+            </div>
+            <!-- standard 3 -->
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon"><i class="ri-shield-user-line"></i></div>
+                <h3>Absolute Cleanliness</h3>
+                <p>Our cooking area is washed down and sterilized multiple times a day. Chefs wear sanitized gloves, caps, and follow strict FDA standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chefs Grid -->
+    <section class="chefs" style="padding: 80px 8%; background-color: var(--clr-surface);">
+        <div class="section-header">
+            <span class="tag">Our Family</span>
+            <h2>Meet the Master Chefs</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Chef 1 -->
+            <div class="chef-card scroll-reveal" style="background-color: var(--clr-bg-light); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--clr-border); text-align: center; padding-bottom: 24px; transition: var(--transition-smooth);">
+                <div class="chef-img-wrapper" style="height: 280px; overflow: hidden; position: relative;">
+                    <img src="image/logo3.jpg" alt="Chef Ramesh Sharma" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                </div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin: 20px 0 6px;">Ramesh Sharma</h3>
+                <p style="color: var(--clr-primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">Executive Head Chef</p>
+                <p style="font-size: 0.85rem; color: var(--clr-text-muted); padding: 0 20px; line-height: 1.5; margin-bottom: 16px;">Over 20 years mastering traditional North Indian curries and clay oven baking.</p>
+                <div class="symbol" style="justify-content: center;">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-fill"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+
+            <!-- Chef 2 -->
+            <div class="chef-card scroll-reveal" style="background-color: var(--clr-bg-light); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--clr-border); text-align: center; padding-bottom: 24px; transition: var(--transition-smooth);">
+                <div class="chef-img-wrapper" style="height: 280px; overflow: hidden; position: relative;">
+                    <img src="image/logo3.jpg" alt="Chef Sanjay Patil" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                </div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin: 20px 0 6px;">Sanjay Patil</h3>
+                <p style="color: var(--clr-primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">Master Bread Chef</p>
+                <p style="font-size: 0.85rem; color: var(--clr-text-muted); padding: 0 20px; line-height: 1.5; margin-bottom: 16px;">Expert in hand-pulled tandoori rotis, deep-fried street style bhaturas, and snacks.</p>
+                <div class="symbol" style="justify-content: center;">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-fill"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+
+            <!-- Chef 3 -->
+            <div class="chef-card scroll-reveal" style="background-color: var(--clr-bg-light); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--clr-border); text-align: center; padding-bottom: 24px; transition: var(--transition-smooth);">
+                <div class="chef-img-wrapper" style="height: 280px; overflow: hidden; position: relative;">
+                    <img src="image/logo3.jpg" alt="Chef Anjali Nair" style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);">
+                </div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin: 20px 0 6px;">Anjali Nair</h3>
+                <p style="color: var(--clr-primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">Sous Chef & Fusion Specialist</p>
+                <p style="font-size: 0.85rem; color: var(--clr-text-muted); padding: 0 20px; line-height: 1.5; margin-bottom: 16px;">Brings modern presentations and creative touch to traditional Indian street foods.</p>
+                <div class="symbol" style="justify-content: center;">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-fill"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Reviews Carousel -->
+    <section class="testimonials" style="padding: 80px 8%; background-color: var(--clr-bg-light); border-top: 1px solid var(--clr-border);">
+        <div class="section-header">
+            <span class="tag">Guest Reviews</span>
+            <h2>What Our Customers Say</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="testimonial-slider-container" style="max-width: 800px; margin: 0 auto; position: relative; overflow: hidden;">
+            <div class="testimonial-wrapper" id="testimonial-wrapper" style="display: flex; transition: transform 0.5s ease-in-out;">
+                <!-- Review 1 -->
+                <div class="testimonial-slide" style="min-width: 100%; padding: 20px; text-align: center;">
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--clr-primary); opacity: 0.2; display: block; margin-bottom: 10px;"></i>
+                    <p style="font-size: 1.25rem; font-family: var(--font-heading); line-height: 1.6; margin-bottom: 24px; color: var(--clr-text-dark);">"The Chole Bhature here is out of this world! Puffed perfectly, crispy on the outside, and the chickpea curry has that deep, roasted masala flavor. Hands down, the best in town!"</p>
+                    <div style="color: var(--clr-accent); font-size: 0.95rem; margin-bottom: 8px;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--clr-text-dark);">Rohan Mehta</h4>
+                    <span style="font-size: 0.75rem; color: var(--clr-text-muted); font-weight: 600; text-transform: uppercase;">Food Critic, Mumbai Times</span>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="testimonial-slide" style="min-width: 100%; padding: 20px; text-align: center;">
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--clr-primary); opacity: 0.2; display: block; margin-bottom: 10px;"></i>
+                    <p style="font-size: 1.25rem; font-family: var(--font-heading); line-height: 1.6; margin-bottom: 24px; color: var(--clr-text-dark);">"Sacred Spoon has become my absolute go-to for weekend family dinners. Extremely clean kitchen, polite service, and their smoky dal tadka with ghee tempering is pure bliss."</p>
+                    <div style="color: var(--clr-accent); font-size: 0.95rem; margin-bottom: 8px;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                    </div>
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--clr-text-dark);">Priya Deshmukh</h4>
+                    <span style="font-size: 0.75rem; color: var(--clr-text-muted); font-weight: 600; text-transform: uppercase;">Verified Guest</span>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="testimonial-slide" style="min-width: 100%; padding: 20px; text-align: center;">
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--clr-primary); opacity: 0.2; display: block; margin-bottom: 10px;"></i>
+                    <p style="font-size: 1.25rem; font-family: var(--font-heading); line-height: 1.6; margin-bottom: 24px; color: var(--clr-text-dark);">"I am extremely particular about hygiene and Sacred Spoon checks all boxes. Their delivery is lighting fast, samosas arrive burning hot and crisp, and packaging is premium!"</p>
+                    <div style="color: var(--clr-accent); font-size: 0.95rem; margin-bottom: 8px;">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                    </div>
+                    <h4 style="font-size: 1rem; font-weight: 700; color: var(--clr-text-dark);">Vicky Grover</h4>
+                    <span style="font-size: 0.75rem; color: var(--clr-text-muted); font-weight: 600; text-transform: uppercase;">Loyal Customer</span>
+                </div>
+            </div>
+
+            <!-- Dots Indicator Navigation -->
+            <div class="slider-dots" style="display: flex; justify-content: center; gap: 8px; margin-top: 20px;">
+                <span class="dot active" data-index="0" style="width: 10px; height: 10px; border-radius: var(--border-radius-circle); background-color: var(--clr-primary); opacity: 1; cursor: pointer; transition: var(--transition-fast);"></span>
+                <span class="dot" data-index="1" style="width: 10px; height: 10px; border-radius: var(--border-radius-circle); background-color: var(--clr-text-muted); opacity: 0.4; cursor: pointer; transition: var(--transition-fast);"></span>
+                <span class="dot" data-index="2" style="width: 10px; height: 10px; border-radius: var(--border-radius-circle); background-color: var(--clr-text-muted); opacity: 0.4; cursor: pointer; transition: var(--transition-fast);"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (<span id="cart-drawer-count">0</span>)</h3>
+            <button class="close-cart-drawer" id="close-cart-btn"><i class="ri-close-line"></i></button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items-container">
+            <div class="empty-cart-message">
+                <i class="ri-shopping-basket-line"></i>
+                <p>Your cart is empty. Let's add some delicious dishes!</p>
+                <a href="menu.html" class="btn primary-btn" id="start-shopping-btn">Explore Menu</a>
+            </div>
+        </div>
+
+        <div class="cart-footer" id="cart-footer">
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Estimated Tax (5%)</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line delivery-line">
+                <span>Delivery Charge</span>
+                <span id="cart-delivery" class="free-delivery">FREE</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>Grand Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+
+            <button class="btn primary-btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Toast Box -->
+    <div class="alert-container" id="alert-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-box logo-box">
+                <a href="index.html" class="footer-logo">
+                    <img src="image/logo3.jpg" alt="Logo">
+                    <span>Sacred Spoon</span>
+                </a>
+                <p>Bringing you the taste of authentic Indian recipes. Hand-ground spices, traditional cooking, and a legacy of pure vegetarian gastronomy.</p>
+                <div class="symbol">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="about.html">Why Choose Us</a></li>
+                    <li><a href="blog.html">Culinary Blog</a></li>
+                    <li><a href="contact.html">Book a Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Popular Dishes</h3>
+                <ul>
+                    <li><a href="menu.html">Crispy Onion Pakoda</a></li>
+                    <li><a href="menu.html">Classic Chole Bhature</a></li>
+                    <li><a href="menu.html">Smoky Dal Tadka</a></li>
+                    <li><a href="menu.html">Steamed Veg Momos</a></li>
+                    <li><a href="menu.html">Bombay Grilled Sandwich</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box newsletter-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive discount coupons, cooking tips, and festival menu updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sacred Spoon Restaurant. All rights reserved. Made with love for Indian Culinary Heritage.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

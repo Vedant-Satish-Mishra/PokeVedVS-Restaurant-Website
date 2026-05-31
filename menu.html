@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sacred Spoon Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header sticky" id="header" style="background-color: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); box-shadow: var(--shadow-sm);">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="image/logo3.jpg" alt="Sacred Spoon Logo">
+                <span>Sacred Spoon</span>
+            </a>
+        </div>
+
+        <nav class="nav" id="navbar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="menu.html" class="nav-link active">Menu</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <button class="icon-btn" id="search-btn" aria-label="Search food">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="icon-btn" id="user-btn" aria-label="User Account">
+                <i class="ri-user-line"></i>
+            </button>
+            <button class="icon-btn" id="wishlist-btn" aria-label="Favorites">
+                <i class="ri-heart-line"></i>
+                <span class="badge" id="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                <i class="ri-shopping-bag-line"></i>
+                <span class="badge" id="cart-count">0</span>
+            </button>
+            <button class="bx bx-menu" id="menu-icon" aria-label="Toggle menu"></button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for pakoda, chola bhatura, samosa...">
+            <button class="close-search" id="close-search"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Sub-page Hero -->
+    <section class="sub-hero" style="background: linear-gradient(rgba(20, 10, 10, 0.7), rgba(20, 10, 10, 0.7)), url('image/bg1.jpg') no-repeat center center/cover; padding: 120px 8% 60px; text-align: center; color: var(--clr-text-light);">
+        <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 10px;">Our Indian Menu</h1>
+        <p style="font-size: 1.05rem; opacity: 0.85; max-width: 600px; margin: 0 auto;">Embark on an epicurean trip spanning savory Indian street side treats, rich creamy gravies, and delicious baked breads.</p>
+    </section>
+
+    <!-- Main Menu Area -->
+    <section class="menu-page" style="padding: 60px 8% 80px; background-color: var(--clr-surface);">
+        <!-- Filter, Search & Sort Panel -->
+        <div class="menu-control-panel" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; gap: 20px; flex-wrap: wrap;">
+            
+            <!-- Category Tabs -->
+            <div class="filter-tabs" style="margin-bottom: 0;">
+                <button class="tab-btn active" data-filter="all">All Items</button>
+                <button class="tab-btn" data-filter="feasts">Grand Feasts</button>
+                <button class="tab-btn" data-filter="snacks">Traditional Snacks</button>
+                <button class="tab-btn" data-filter="main">Main Dishes</button>
+                <button class="tab-btn" data-filter="fastfood">Indo-Western Fusion</button>
+            </div>
+
+            <!-- Sort and Search input tools -->
+            <div class="menu-utilities" style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                <div class="inline-search-box" style="position: relative; display: flex; align-items: center;">
+                    <input type="text" id="menu-search" placeholder="Quick search..." style="padding: 10px 16px 10px 40px; border: 1px solid var(--clr-border); border-radius: 30px; font-family: var(--font-body); font-size: 0.9rem; width: 220px; transition: var(--transition-fast);">
+                    <i class="ri-search-line" style="position: absolute; left: 16px; color: var(--clr-text-muted);"></i>
+                </div>
+                
+                <select id="menu-sort" style="padding: 10px 20px; border: 1px solid var(--clr-border); border-radius: 30px; font-family: var(--font-body); font-size: 0.9rem; color: var(--clr-text-dark); background-color: var(--clr-bg-light); cursor: pointer;">
+                    <option value="default">Default Sorting</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Sort by Rating</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid" id="menu-grid">
+            <!-- 1. Pakoda -->
+            <div class="menu-item-card scroll-reveal" data-category="snacks" data-id="pakoda" data-price="5.99" data-rating="4.5">
+                <div class="card-img-wrapper">
+                    <img src="image/pakoda.jpeg" alt="Pakoda">
+                    <span class="item-tag">Snacks</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <h3>Onion Pakoda</h3>
+                    <p class="description">Crispy onion fritters infused with green chilies, cilantro, and spices, fried to a golden hue.</p>
+                    <div class="card-action">
+                        <span class="price">$5.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="pakoda" data-name="Onion Pakoda" data-price="5.99" data-img="image/pakoda.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Chola Bhatura -->
+            <div class="menu-item-card scroll-reveal" data-category="main" data-id="chola-bhatura" data-price="11.99" data-rating="4.9">
+                <div class="card-img-wrapper">
+                    <img src="image/chola bhatura.jpeg" alt="Chola Bhatura">
+                    <span class="item-tag">Main Course</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <span>(4.9)</span>
+                    </div>
+                    <h3>Chole Bhature</h3>
+                    <p class="description">Traditional Punjabi puffed bhatura served with spicy, tangy dark chickpea masala curry.</p>
+                    <div class="card-action">
+                        <span class="price">$11.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="chola-bhatura" data-name="Chole Bhature" data-price="11.99" data-img="image/chola bhatura.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Dal Tadka -->
+            <div class="menu-item-card scroll-reveal" data-category="main" data-id="dal-tadka" data-price="9.49" data-rating="4.2">
+                <div class="card-img-wrapper">
+                    <img src="image/dal tadka.jpeg" alt="Dal Tadka">
+                    <span class="item-tag">Main Course</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+                        <span>(4.2)</span>
+                    </div>
+                    <h3>Dal Tadka</h3>
+                    <p class="description">Yellow split peas slow-cooked and tempered with garlic, tomato, and ghee-roasted spices.</p>
+                    <div class="card-action">
+                        <span class="price">$9.49</span>
+                        <button class="add-to-cart-btn btn-square" data-id="dal-tadka" data-name="Dal Tadka" data-price="9.49" data-img="image/dal tadka.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Aloo Vada -->
+            <div class="menu-item-card scroll-reveal" data-category="snacks" data-id="aloo-vada" data-price="4.99" data-rating="4.6">
+                <div class="card-img-wrapper">
+                    <img src="image/aioo vada.jpeg" alt="Aloo Vada">
+                    <span class="item-tag">Snacks</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        <span>(4.6)</span>
+                    </div>
+                    <h3>Aloo Vada</h3>
+                    <p class="description">Spiced mashed potato balls dipped in chickpea batter, deep-fried to crunchy excellence.</p>
+                    <div class="card-action">
+                        <span class="price">$4.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="aloo-vada" data-name="Aloo Vada" data-price="4.99" data-img="image/aioo vada.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. French Fries -->
+            <div class="menu-item-card scroll-reveal" data-category="fastfood" data-id="french-fries" data-price="4.49" data-rating="3.8">
+                <div class="card-img-wrapper">
+                    <img src="image/french fries.jpeg" alt="French Fries">
+                    <span class="item-tag">Fusion</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i><i class="ri-star-line"></i>
+                        <span>(3.8)</span>
+                    </div>
+                    <h3>Masala French Fries</h3>
+                    <p class="description">Golden-crisp potato fries tossed in a spicy, chatpata Indian peri-peri spice blend.</p>
+                    <div class="card-action">
+                        <span class="price">$4.49</span>
+                        <button class="add-to-cart-btn btn-square" data-id="french-fries" data-name="Masala French Fries" data-price="4.49" data-img="image/french fries.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Garlic Bread -->
+            <div class="menu-item-card scroll-reveal" data-category="fastfood" data-id="garlic-bread" data-price="6.49" data-rating="4.4">
+                <div class="card-img-wrapper">
+                    <img src="image/garlic breed.jpeg" alt="Garlic Bread">
+                    <span class="item-tag">Fusion</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        <span>(4.4)</span>
+                    </div>
+                    <h3>Cheese Garlic Bread</h3>
+                    <p class="description">Baked sourdough bread infused with garlic butter, fresh parsley, and bubbling cheese.</p>
+                    <div class="card-action">
+                        <span class="price">$6.49</span>
+                        <button class="add-to-cart-btn btn-square" data-id="garlic-bread" data-name="Cheese Garlic Bread" data-price="6.49" data-img="image/garlic breed.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Kachori -->
+            <div class="menu-item-card scroll-reveal" data-category="snacks" data-id="kachori" data-price="3.99" data-rating="4.7">
+                <div class="card-img-wrapper">
+                    <img src="image/kachori.jpeg" alt="Kachori">
+                    <span class="item-tag">Snacks</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        <span>(4.7)</span>
+                    </div>
+                    <h3>Khasta Kachori</h3>
+                    <p class="description">Flaky pastry shells filled with spiced lentils (moong dal), served with fresh yogurt and chutneys.</p>
+                    <div class="card-action">
+                        <span class="price">$3.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="kachori" data-name="Khasta Kachori" data-price="3.99" data-img="image/kachori.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Momos -->
+            <div class="menu-item-card scroll-reveal" data-category="fastfood" data-id="momos" data-price="7.49" data-rating="4.8">
+                <div class="card-img-wrapper">
+                    <img src="image/momos.jpeg" alt="Momos">
+                    <span class="item-tag">Fusion</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <span>(4.8)</span>
+                    </div>
+                    <h3>Steamed Veg Momos</h3>
+                    <p class="description">Minced fresh seasonal vegetables wrapped in thin dough, steamed and served with spicy red chili sauce.</p>
+                    <div class="card-action">
+                        <span class="price">$7.49</span>
+                        <button class="add-to-cart-btn btn-square" data-id="momos" data-name="Steamed Veg Momos" data-price="7.49" data-img="image/momos.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Sabudana Wada -->
+            <div class="menu-item-card scroll-reveal" data-category="snacks" data-id="sabudana-vada" data-price="5.49" data-rating="4.3">
+                <div class="card-img-wrapper">
+                    <img src="image/sabudana wada.jpeg" alt="Sabudana Wada">
+                    <span class="item-tag">Snacks</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+                        <span>(4.3)</span>
+                    </div>
+                    <h3>Sabudana Vada</h3>
+                    <p class="description">Crispy patties made of tapioca pearls, mashed potatoes, and roasted crushed peanuts.</p>
+                    <div class="card-action">
+                        <span class="price">$5.49</span>
+                        <button class="add-to-cart-btn btn-square" data-id="sabudana-vada" data-name="Sabudana Vada" data-price="5.49" data-img="image/sabudana wada.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Samosa -->
+            <div class="menu-item-card scroll-reveal" data-category="snacks" data-id="samosa" data-price="2.99" data-rating="4.9">
+                <div class="card-img-wrapper">
+                    <img src="image/samosa.jpeg" alt="Samosa">
+                    <span class="item-tag">Snacks</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <span>(4.9)</span>
+                    </div>
+                    <h3>Classic Samosa</h3>
+                    <p class="description">Crispy pastry cone stuffed with mildly spiced potato and peas mash. India's favorite snack.</p>
+                    <div class="card-action">
+                        <span class="price">$2.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="samosa" data-name="Classic Samosa" data-price="2.99" data-img="image/samosa.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Sandwich -->
+            <div class="menu-item-card scroll-reveal" data-category="fastfood" data-id="sandwich" data-price="6.99" data-rating="4.5">
+                <div class="card-img-wrapper">
+                    <img src="image/sandwitch.jpeg" alt="Sandwich">
+                    <span class="item-tag">Fusion</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <h3>Bombay Grilled Sandwich</h3>
+                    <p class="description">Toasted bread loaded with sliced vegetables, green chutney, and melting mozzarella cheese.</p>
+                    <div class="card-action">
+                        <span class="price">$6.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="sandwich" data-name="Bombay Grilled Sandwich" data-price="6.99" data-img="image/sandwitch.jpeg"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Grand Shiv Thali -->
+            <div class="menu-item-card scroll-reveal" data-category="feasts" data-id="shiv-thali" data-price="18.99" data-rating="5.0">
+                <div class="card-img-wrapper">
+                    <img src="image/shiv_thali.png" alt="Grand Shiv Thali">
+                    <span class="item-tag">Grand Feast</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <span>(5.0)</span>
+                    </div>
+                    <h3>Grand Shiv Thali</h3>
+                    <p class="description">Paneer Butter Masala, Dal Makhani, Mixed Veg, Jeera Rice, 2 Butter Naans, Raita, Samosa, Gulab Jamun, Lassi.</p>
+                    <div class="card-action">
+                        <span class="price">$18.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="shiv-thali" data-name="Grand Shiv Thali" data-price="18.99" data-img="image/shiv_thali.png"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Royal Maharaja Thali -->
+            <div class="menu-item-card scroll-reveal" data-category="feasts" data-id="maharaja-thali" data-price="22.99" data-rating="4.9">
+                <div class="card-img-wrapper">
+                    <img src="image/maharaja_thali.png" alt="Royal Maharaja Thali">
+                    <span class="item-tag">Grand Feast</span>
+                </div>
+                <div class="card-body">
+                    <div class="rating">
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <span>(4.9)</span>
+                    </div>
+                    <h3>Royal Maharaja Thali</h3>
+                    <p class="description">Paneer Tikka, Shahi Paneer, Aloo Gobhi, saffron Pulao, 2 Laccha Parathas, Papdi Chaat, Kheer, Masala Chai.</p>
+                    <div class="card-action">
+                        <span class="price">$22.99</span>
+                        <button class="add-to-cart-btn btn-square" data-id="maharaja-thali" data-name="Royal Maharaja Thali" data-price="22.99" data-img="image/maharaja_thali.png"><i class="ri-shopping-cart-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (<span id="cart-drawer-count">0</span>)</h3>
+            <button class="close-cart-drawer" id="close-cart-btn"><i class="ri-close-line"></i></button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items-container">
+            <div class="empty-cart-message">
+                <i class="ri-shopping-basket-line"></i>
+                <p>Your cart is empty. Let's add some delicious dishes!</p>
+                <a href="#menu-grid" class="btn primary-btn" id="start-shopping-btn">Explore Menu</a>
+            </div>
+        </div>
+
+        <div class="cart-footer" id="cart-footer">
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Estimated Tax (5%)</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line delivery-line">
+                <span>Delivery Charge</span>
+                <span id="cart-delivery" class="free-delivery">FREE</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>Grand Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+
+            <button class="btn primary-btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Food Detail Modal -->
+    <div class="modal-overlay" id="detail-modal-overlay">
+        <div class="detail-modal" id="detail-modal">
+            <button class="close-modal" id="close-modal-btn"><i class="ri-close-line"></i></button>
+            <div class="modal-content-grid">
+                <div class="modal-img-container">
+                    <img src="" alt="" id="modal-food-img">
+                </div>
+                <div class="modal-info-container">
+                    <span class="modal-tag" id="modal-food-tag">Snacks</span>
+                    <h2 id="modal-food-title">Food Title</h2>
+                    <div class="rating" id="modal-food-rating"></div>
+                    <p class="modal-desc" id="modal-food-desc">Detailed recipe description goes here...</p>
+                    
+                    <div class="modal-meta-grid">
+                        <div class="meta-item">
+                            <i class="ri-time-line"></i>
+                            <span>Prep Time: 15 mins</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="ri-fire-line"></i>
+                            <span>Calories: ~350 Kcal</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="ri-leaf-line"></i>
+                            <span>100% Vegetarian</span>
+                        </div>
+                    </div>
+
+                    <div class="customization-options">
+                        <h4>Spice Level</h4>
+                        <div class="spice-levels">
+                            <label><input type="radio" name="spice-level" value="mild"> Mild</label>
+                            <label><input type="radio" name="spice-level" value="medium" checked> Medium</label>
+                            <label><input type="radio" name="spice-level" value="spicy"> Spicy</label>
+                        </div>
+                    </div>
+
+                    <div class="modal-action-footer">
+                        <div class="quantity-controller">
+                            <button id="modal-qty-minus"><i class="ri-subtract-line"></i></button>
+                            <span id="modal-qty-val">1</span>
+                            <button id="modal-qty-plus"><i class="ri-add-line"></i></button>
+                        </div>
+                        <button class="btn primary-btn" id="modal-add-to-cart-btn">Add to Cart - <span id="modal-total-price">$0.00</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Toast Box -->
+    <div class="alert-container" id="alert-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-box logo-box">
+                <a href="index.html" class="footer-logo">
+                    <img src="image/logo3.jpg" alt="Logo">
+                    <span>Sacred Spoon</span>
+                </a>
+                <p>Bringing you the taste of authentic Indian recipes. Hand-ground spices, traditional cooking, and a legacy of pure vegetarian gastronomy.</p>
+                <div class="symbol">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="about.html">Why Choose Us</a></li>
+                    <li><a href="blog.html">Culinary Blog</a></li>
+                    <li><a href="contact.html">Book a Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Popular Dishes</h3>
+                <ul>
+                    <li><a href="menu.html">Crispy Onion Pakoda</a></li>
+                    <li><a href="menu.html">Classic Chole Bhature</a></li>
+                    <li><a href="menu.html">Smoky Dal Tadka</a></li>
+                    <li><a href="menu.html">Steamed Veg Momos</a></li>
+                    <li><a href="menu.html">Bombay Grilled Sandwich</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box newsletter-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive discount coupons, cooking tips, and festival menu updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sacred Spoon Restaurant. All rights reserved. Made with love for Indian Culinary Heritage.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

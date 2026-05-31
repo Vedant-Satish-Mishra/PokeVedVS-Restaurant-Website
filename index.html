@@ -3,227 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Example</title>
+    <title>Sacred Spoon - Authentic Indian Dining</title>
     <link rel="stylesheet" href="style.css">
-
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
 </head>
 <body>
-    <header class="header">
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
         <div class="logo">
-            <img src="image/logo3.jpg" alt="Logo">
+            <a href="index.html" class="logo-link">
+                <img src="image/logo3.jpg" alt="Sacred Spoon Logo">
+                <span>Sacred Spoon</span>
+            </a>
         </div>
 
-        <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">Feature</a>
-            <a href="#">Blog</a>
-            <a href="#">Pages</a>
-            <a href="#">Contact</a>
+        <nav class="nav" id="navbar">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        <div class="icons">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="#"><i class="ri-user-line"></i></a>
-            <a href="#"><i class="ri-heart-line"></i></a>
-            <a href="#"><i class="ri-shopping-bag-line"></i></a>
 
-            <div class="bx bx-menu" id="menu-icon">
+        <div class="icons">
+            <button class="icon-btn" id="search-btn" aria-label="Search food">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="icon-btn" id="user-btn" aria-label="User Account">
+                <i class="ri-user-line"></i>
+            </button>
+            <button class="icon-btn" id="wishlist-btn" aria-label="Favorites">
+                <i class="ri-heart-line"></i>
+                <span class="badge" id="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                <i class="ri-shopping-bag-line"></i>
+                <span class="badge" id="cart-count">0</span>
+            </button>
+            <button class="bx bx-menu" id="menu-icon" aria-label="Toggle menu"></button>
         </div>
     </header>
-    <section class="main">
-        <div class="main-text">
-            <h4>Style Destination</h4>
-            <h1>Shiv Thali</h1>
-            <p>It is long established fact that a reader will be destracted by the redable content </p>
-            <a href="#" class="btn">Shop Now</a>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for pakoda, chola bhatura, samosa...">
+            <button class="close-search" id="close-search"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Hero / Home Section -->
+    <section class="home" id="home">
+        <div class="home-overlay"></div>
+        <div class="home-content">
+            <span class="sub-title">A Symphony of Flavors</span>
+            <h1>Authentic Indian Taste</h1>
+            <p>Experience the richness of traditional Indian spices and recipes crafted by our culinary experts. Fresh, warm, and delicious, delivered straight to your table.</p>
+            <div class="hero-actions">
+                <a href="menu.html" class="btn primary-btn">Explore Menu</a>
+                <a href="contact.html" class="btn secondary-btn">Book a Table</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#specials"><i class="ri-arrow-down-double-line"></i></a>
         </div>
     </section>
-    <br><br><br>
-    <section class="store">
-        <div class="center-text">
-            <h6>Crispy, Every Bite Taste</h6>
-            <h2>Visit Our Store</h2>
+
+    <!-- Featured Store/Specials Section -->
+    <section class="specials" id="specials">
+        <div class="section-header">
+            <span class="tag">Chef's Recommendations</span>
+            <h2>Signature Creations</h2>
+            <div class="header-line"></div>
         </div>
 
-        <div class="store-content">
-            <div class="col" >
-                <div>
-                    <img src="image/pakoda.jpeg" alt="">
+        <div class="specials-grid">
+            <!-- Special 1 -->
+            <div class="special-card scroll-reveal">
+                <div class="card-badge">Popular</div>
+                <div class="special-img">
+                    <img src="image/pakoda.jpeg" alt="Crispy Onion Pakoda">
                 </div>
-                <div class="col-text">
-                    <h4>Pakoda</h4>
-                    <p>It is very crispy and oily .It's test is best .It's made of onion.</p>
-                </div>
-            </div>
-            <br><br>
-            <div class="col" >
-                <div>
-                    <img src="image/chola bhatura.jpeg" alt="">
-                </div>
-                <div class="col-text">
-                    <h4>Chola Bhatura</h4>
-                    <p>It is very crispy and oily .It's test is best .It's made of onion.</p>
+                <div class="special-info">
+                    <h3>Crispy Onion Pakoda</h3>
+                    <p>Fragrant onion slivers deep-fried in a spiced gram flour batter. Perfect crunch in every bite, served with sweet-tangy tamarind chutney.</p>
+                    <div class="card-footer">
+                        <span class="price">$5.99</span>
+                        <button class="add-to-cart-btn" data-id="pakoda" data-name="Crispy Onion Pakoda" data-price="5.99" data-img="image/pakoda.jpeg">Add to Cart</button>
+                    </div>
                 </div>
             </div>
-            <br><br>
-            <div class="col" >
-                <div>
-                    <img src="image/dal tadka.jpeg" alt="">
+
+            <!-- Special 2 -->
+            <div class="special-card scroll-reveal">
+                <div class="card-badge">Best Seller</div>
+                <div class="special-img">
+                    <img src="image/chola bhatura.jpeg" alt="Chola Bhatura">
                 </div>
-                <div class="col-text">
-                    <h4>Dal Tadka</h4>
-                    <p>It is very crispy and oily .It's test is best .It's made of onion.</p>
+                <div class="special-info">
+                    <h3>Classic Chole Bhature</h3>
+                    <p>Spiced chickpeas simmered in rich tomato-onion gravy, paired with extra-fluffy, golden-fried puffed bread. A royal North Indian feast.</p>
+                    <div class="card-footer">
+                        <span class="price">$11.99</span>
+                        <button class="add-to-cart-btn" data-id="chola-bhatura" data-name="Classic Chole Bhature" data-price="11.99" data-img="image/chola bhatura.jpeg">Add to Cart</button>
+                    </div>
                 </div>
             </div>
+
+            <!-- Special 3 -->
+            <div class="special-card scroll-reveal">
+                <div class="card-badge">Authentic</div>
+                <div class="special-img">
+                    <img src="image/dal tadka.jpeg" alt="Dal Tadka">
+                </div>
+                <div class="special-info">
+                    <h3>Smoky Dal Tadka</h3>
+                    <p>Yellow lentils tempered with ghee, roasted cumin seeds, garlic, dried red chilies, and fresh coriander. Served piping hot with a rich aroma.</p>
+                    <div class="card-footer">
+                        <span class="price">$9.49</span>
+                        <button class="add-to-cart-btn" data-id="dal-tadka" data-name="Smoky Dal Tadka" data-price="9.49" data-img="image/dal tadka.jpeg">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special 4 -->
+            <div class="special-card scroll-reveal">
+                <div class="card-badge">Signature Feast</div>
+                <div class="special-img">
+                    <img src="image/shiv_thali.png" alt="Grand Shiv Thali">
+                </div>
+                <div class="special-info">
+                    <h3>Grand Shiv Thali</h3>
+                    <p>Our legendary house signature. A massive platter containing Paneer Butter Masala, Dal Makhani, Mixed Vegetable Subji, Jeera Rice, two Butter Naans, Raita, Samosa, a sweet Gulab Jamun, and a refreshing glass of Mango Lassi.</p>
+                    <div class="card-footer">
+                        <span class="price">$18.99</span>
+                        <button class="add-to-cart-btn" data-id="shiv-thali" data-name="Grand Shiv Thali" data-price="18.99" data-img="image/shiv_thali.png">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="menu.html" class="btn primary-btn">View Full Menu <i class="ri-arrow-right-line"></i></a>
         </div>
     </section>
-    <br><br><br>
-    <section class="seller-content" >
-        <div class="row">
-            <div class="row-img">
-                <img src="image/aioo vada.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
 
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
+    <!-- Brief About Teaser -->
+    <section class="about-teaser" id="about-teaser" style="background-color: var(--clr-bg-light); border-top: 1px solid var(--clr-border);">
+        <div class="section-header">
+            <span class="tag">Who We Are</span>
+            <h2>Our Story & Standards</h2>
+            <div class="header-line"></div>
         </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/french fries.jpeg">
+        
+        <div class="about-teaser-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <div class="teaser-img scroll-reveal" style="border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+                <img src="image/bg2.jpeg" alt="Inside Sacred Spoon Kitchen" style="width:100%; height:320px; object-fit:cover;">
             </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/garlic breed.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/kachori.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/momos.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/sabudana wada.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/samosa.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="row-img">
-                <img src="image/sandwitch.jpeg">
-            </div>
-            <h5>Demo Item</h5>
-            <h6>$23.00</h6>
-
-            <div class="s-btn">
-                <a href="#">Add to Cart<i class="ri-shopping-cart-line"></i></a>
+            <div class="teaser-text scroll-reveal">
+                <h3 style="font-family:var(--font-heading); font-size:1.8rem; margin-bottom:16px;">Taste Crafted Over Generations</h3>
+                <p style="color:var(--clr-text-muted); margin-bottom:24px; font-size:0.95rem; line-height:1.7;">Founded with a deep appreciation for India's rich culinary traditions, Sacred Spoon brings you the finest selection of dishes. From hand-roasted garam masalas to slow-simmered rich dal tadkas, our meals are cooked with extreme care, utilizing fresh, high-quality, pure organic ingredients.</p>
+                <div style="display:flex; gap:20px; margin-bottom:30px;">
+                    <div style="text-align:center; padding:12px; background:var(--clr-surface); border-radius:var(--border-radius-sm); flex:1; box-shadow:var(--shadow-sm);">
+                        <span style="font-size:1.8rem; color:var(--clr-primary); font-weight:800; display:block;">100%</span>
+                        <span style="font-size:0.75rem; font-weight:700; color:var(--clr-text-muted);">Vegetarian</span>
+                    </div>
+                    <div style="text-align:center; padding:12px; background:var(--clr-surface); border-radius:var(--border-radius-sm); flex:1; box-shadow:var(--shadow-sm);">
+                        <span style="font-size:1.8rem; color:var(--clr-primary); font-weight:800; display:block;">20+</span>
+                        <span style="font-size:0.75rem; font-weight:700; color:var(--clr-text-muted);">Authentic Spices</span>
+                    </div>
+                </div>
+                <a href="about.html" class="btn primary-btn">Learn More About Us</a>
             </div>
         </div>
     </section>
 
-    <section class="banner">
-        <div class="ban-content">
-            <h2>Enjoy the Delicious Taste </h2>
-            <p>Nice place to visit and also nice menu to eat. </p>
-            <br><br>
-            <a href="#" class="ban-btn">Shop Now</a>
+    <!-- Brief Blog Teaser -->
+    <section class="blog-teaser" id="blog-teaser" style="background-color: var(--clr-surface); border-top: 1px solid var(--clr-border);">
+        <div class="section-header">
+            <span class="tag">Culinary Diary</span>
+            <h2>Recent Stories</h2>
+            <div class="header-line"></div>
+        </div>
+        
+        <div class="blog-grid" style="margin-bottom: 40px;">
+            <!-- Blog Card 1 -->
+            <div class="blog-card scroll-reveal" data-post-id="1">
+                <div class="blog-img">
+                    <img src="image/bg1.jpg" alt="Indian Spices">
+                </div>
+                <div class="blog-info">
+                    <div class="blog-meta">
+                        <span><i class="ri-calendar-line"></i> May 25, 2026</span>
+                        <span><i class="ri-user-line"></i> Chef Sharma</span>
+                    </div>
+                    <h3>Demystifying Indian Spices: The Art of Tadka</h3>
+                    <p>Learn how to properly temper cumin, mustard seeds, and chilies in hot oil or ghee to release their maximum flavors.</p>
+                    <button class="read-more-btn" data-post-id="1">Read More <i class="ri-arrow-right-line"></i></button>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="blog-card scroll-reveal" data-post-id="2">
+                <div class="blog-img">
+                    <img src="image/chola bhatura.jpeg" alt="Chole Bhature secrets">
+                </div>
+                <div class="blog-info">
+                    <div class="blog-meta">
+                        <span><i class="ri-calendar-line"></i> May 18, 2026</span>
+                        <span><i class="ri-user-line"></i> Food Writer Anjali</span>
+                    </div>
+                    <h3>How Chole Bhature Became India's Favorite Comfort Food</h3>
+                    <p>Discover the rich history of how this classic North Indian combination became a national street-food phenomenon.</p>
+                    <button class="read-more-btn" data-post-id="2">Read More <i class="ri-arrow-right-line"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="blog.html" class="btn primary-btn">Visit Our Blog <i class="ri-arrow-right-line"></i></a>
         </div>
     </section>
-    <br><br><br>
-    <section class="footer">
-        <div class="footer-box">
-            <a href="#" class="logos"><img src="image/logo3.jpg"></a>
-            <h5>We beleive it has power to doamazing things</h5>
 
-            <div class="symbol">
-                <a href="#"><i class="ri-facebook-fill"></i></a>
-                <a href="#"><i class="ri-instagram-fill"></i></a>
-                <a href="#"><i class="ri-whatsapp-fill"></i></a>
-                <a href="#"><i class="ri-twitter-fill"></i></a>
-                <a href="#"><i class="ri-youtube-fill"></i></a>
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (<span id="cart-drawer-count">0</span>)</h3>
+            <button class="close-cart-drawer" id="close-cart-btn"><i class="ri-close-line"></i></button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Dynamically injected items -->
+            <div class="empty-cart-message">
+                <i class="ri-shopping-basket-line"></i>
+                <p>Your cart is empty. Let's add some delicious dishes!</p>
+                <a href="menu.html" class="btn primary-btn" id="start-shopping-btn">Explore Menu</a>
             </div>
         </div>
 
-        <div class="footer-box">
-            <h5>Useful Links</h5>
-            <li><a href="#">Supper</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Site Map</a></li>
-        </div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Estimated Tax (5%)</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line delivery-line">
+                <span>Delivery Charge</span>
+                <span id="cart-delivery" class="free-delivery">FREE</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>Grand Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
 
-        <div class="footer-box">
-            <h5>Useful Links</h5>
-            <li><a href="#">Supper</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Site Map</a></li>
+            <button class="btn primary-btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
         </div>
+    </div>
 
-        <div class="footer-box">
-            <h5>Useful Links</h5>
-            <li><a href="#">Supper</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Site Map</a></li>
+    <!-- Food Detail Modal -->
+    <div class="modal-overlay" id="detail-modal-overlay">
+        <div class="detail-modal" id="detail-modal">
+            <button class="close-modal" id="close-modal-btn"><i class="ri-close-line"></i></button>
+            <div class="modal-content-grid">
+                <div class="modal-img-container">
+                    <img src="" alt="" id="modal-food-img">
+                </div>
+                <div class="modal-info-container">
+                    <span class="modal-tag" id="modal-food-tag">Snacks</span>
+                    <h2 id="modal-food-title">Food Title</h2>
+                    <div class="rating" id="modal-food-rating"></div>
+                    <p class="modal-desc" id="modal-food-desc">Detailed recipe description goes here...</p>
+                    
+                    <div class="modal-meta-grid">
+                        <div class="meta-item">
+                            <i class="ri-time-line"></i>
+                            <span>Prep Time: 15 mins</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="ri-fire-line"></i>
+                            <span>Calories: ~350 Kcal</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="ri-leaf-line"></i>
+                            <span>100% Vegetarian</span>
+                        </div>
+                    </div>
+
+                    <div class="customization-options">
+                        <h4>Spice Level</h4>
+                        <div class="spice-levels">
+                            <label><input type="radio" name="spice-level" value="mild"> Mild</label>
+                            <label><input type="radio" name="spice-level" value="medium" checked> Medium</label>
+                            <label><input type="radio" name="spice-level" value="spicy"> Spicy</label>
+                        </div>
+                    </div>
+
+                    <div class="modal-action-footer">
+                        <div class="quantity-controller">
+                            <button id="modal-qty-minus"><i class="ri-subtract-line"></i></button>
+                            <span id="modal-qty-val">1</span>
+                            <button id="modal-qty-plus"><i class="ri-add-line"></i></button>
+                        </div>
+                        <button class="btn primary-btn" id="modal-add-to-cart-btn">Add to Cart - <span id="modal-total-price">$0.00</span></button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Blog Detail Modal -->
+    <div class="modal-overlay" id="blog-modal-overlay">
+        <div class="blog-modal" id="blog-modal">
+            <button class="close-modal" id="close-blog-btn"><i class="ri-close-line"></i></button>
+            <div class="blog-modal-content">
+                <div class="blog-modal-img">
+                    <img src="" alt="" id="blog-modal-image">
+                </div>
+                <div class="blog-modal-info">
+                    <span class="blog-modal-date" id="blog-modal-date">Date</span>
+                    <h2 id="blog-modal-title">Blog Title</h2>
+                    <div id="blog-modal-text">Detailed blog text...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Toast Box -->
+    <div class="alert-container" id="alert-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-box logo-box">
+                <a href="index.html" class="footer-logo">
+                    <img src="image/logo3.jpg" alt="Logo">
+                    <span>Sacred Spoon</span>
+                </a>
+                <p>Bringing you the taste of authentic Indian recipes. Hand-ground spices, traditional cooking, and a legacy of pure vegetarian gastronomy.</p>
+                <div class="symbol">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="about.html">Why Choose Us</a></li>
+                    <li><a href="blog.html">Culinary Blog</a></li>
+                    <li><a href="contact.html">Book a Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Popular Dishes</h3>
+                <ul>
+                    <li><a href="menu.html">Crispy Onion Pakoda</a></li>
+                    <li><a href="menu.html">Classic Chole Bhature</a></li>
+                    <li><a href="menu.html">Smoky Dal Tadka</a></li>
+                    <li><a href="menu.html">Steamed Veg Momos</a></li>
+                    <li><a href="menu.html">Bombay Grilled Sandwich</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box newsletter-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive discount coupons, cooking tips, and festival menu updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sacred Spoon Restaurant. All rights reserved. Made with love for Indian Culinary Heritage.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

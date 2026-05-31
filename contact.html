@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Bookings - Sacred Spoon Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header sticky" id="header" style="background-color: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); box-shadow: var(--shadow-sm);">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="image/logo3.jpg" alt="Sacred Spoon Logo">
+                <span>Sacred Spoon</span>
+            </a>
+        </div>
+
+        <nav class="nav" id="navbar">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <button class="icon-btn" id="search-btn" aria-label="Search food">
+                <i class="ri-search-line"></i>
+            </button>
+            <button class="icon-btn" id="user-btn" aria-label="User Account">
+                <i class="ri-user-line"></i>
+            </button>
+            <button class="icon-btn" id="wishlist-btn" aria-label="Favorites">
+                <i class="ri-heart-line"></i>
+                <span class="badge" id="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                <i class="ri-shopping-bag-line"></i>
+                <span class="badge" id="cart-count">0</span>
+            </button>
+            <button class="bx bx-menu" id="menu-icon" aria-label="Toggle menu"></button>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for pakoda, chola bhatura, samosa...">
+            <button class="close-search" id="close-search"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Sub-page Hero -->
+    <section class="sub-hero" style="background: linear-gradient(rgba(20, 10, 10, 0.7), rgba(20, 10, 10, 0.7)), url('image/bg2.jpeg') no-repeat center center/cover; padding: 120px 8% 60px; text-align: center; color: var(--clr-text-light);">
+        <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 10px;">Reserve a Table</h1>
+        <p style="font-size: 1.05rem; opacity: 0.85; max-width: 600px; margin: 0 auto;">Secure your seats for a sensory feast of authentic Indian gastronomy or write us a feedback message.</p>
+    </section>
+
+    <!-- Contact details and Reservation Area -->
+    <section class="contact" style="padding: 60px 8% 80px;">
+        <div class="contact-wrapper">
+            <!-- Reservation Form -->
+            <div class="reservation-box scroll-reveal">
+                <h3>Online Reservation</h3>
+                <form id="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-name">Name</label>
+                            <input type="text" id="res-name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="res-email">Email</label>
+                            <input type="email" id="res-email" required placeholder="Your email address">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-date">Date</label>
+                            <input type="date" id="res-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time">Time</label>
+                            <input type="time" id="res-time" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-guests">Number of Guests</label>
+                            <select id="res-guests" required>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-phone">Phone Number</label>
+                            <input type="tel" id="res-phone" required placeholder="Your mobile number">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn primary-btn block-btn">Confirm Reservation</button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="info-box scroll-reveal">
+                <h3>Contact & Hours</h3>
+                <div class="info-items">
+                    <div class="info-item">
+                        <i class="ri-map-pin-line"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>108, Spice Valley Road, Food Court Arcade, Mumbai, India</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="ri-time-line"></i>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p id="hours-mon-fri">Mon - Fri: 11:00 AM - 11:00 PM</p>
+                            <p id="hours-sat-sun">Sat - Sun: 10:00 AM - Midnight</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="ri-mail-line"></i>
+                        <div>
+                            <h4>Write to Us</h4>
+                            <p>dine@shivthali.com</p>
+                            <p>reservations@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="ri-phone-line"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+91 98765 43210</p>
+                            <p>+91 22 2456 7890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion section -->
+    <section class="faq-section" style="padding: 80px 8%; background-color: var(--clr-bg-light); border-top: 1px solid var(--clr-border);">
+        <div class="section-header">
+            <span class="tag">Clarifications</span>
+            <h2>Frequently Asked Questions</h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="faq-wrapper" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+            <!-- FAQ 1 -->
+            <div class="faq-item scroll-reveal" style="background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--border-radius-sm); overflow: hidden; transition: var(--transition-smooth);">
+                <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: transparent; border: none; font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--clr-text-dark); cursor: pointer; text-align: left;">
+                    <span>Are all dishes served 100% vegetarian?</span>
+                    <i class="ri-arrow-down-s-line" style="font-size: 1.3rem; transition: var(--transition-fast); color: var(--clr-primary);"></i>
+                </button>
+                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); background-color: var(--clr-bg-light);">
+                    <p style="padding: 20px 24px; margin: 0; font-size: 0.95rem; color: var(--clr-text-muted); border-top: 1px solid var(--clr-border); line-height: 1.6;">Yes! Sacred Spoon is a pure vegetarian (shakahari) establishment. We do not cook or handle eggs, meat, or animal-derived gelatins in any of our kitchen spaces.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item scroll-reveal" style="background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--border-radius-sm); overflow: hidden; transition: var(--transition-smooth);">
+                <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: transparent; border: none; font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--clr-text-dark); cursor: pointer; text-align: left;">
+                    <span>Can I customize the spice levels of my order?</span>
+                    <i class="ri-arrow-down-s-line" style="font-size: 1.3rem; transition: var(--transition-fast); color: var(--clr-primary);"></i>
+                </button>
+                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); background-color: var(--clr-bg-light);">
+                    <p style="padding: 20px 24px; margin: 0; font-size: 0.95rem; color: var(--clr-text-muted); border-top: 1px solid var(--clr-border); line-height: 1.6;">Absolutely. For most snacks and main dishes, we offer customized options (Mild, Medium, or Spicy). You can choose your preferred level in the dish detail popup when ordering.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item scroll-reveal" style="background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--border-radius-sm); overflow: hidden; transition: var(--transition-smooth);">
+                <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: transparent; border: none; font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--clr-text-dark); cursor: pointer; text-align: left;">
+                    <span>Do you offer home delivery and how fast is it?</span>
+                    <i class="ri-arrow-down-s-line" style="font-size: 1.3rem; transition: var(--transition-fast); color: var(--clr-primary);"></i>
+                </button>
+                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); background-color: var(--clr-bg-light);">
+                    <p style="padding: 20px 24px; margin: 0; font-size: 0.95rem; color: var(--clr-text-muted); border-top: 1px solid var(--clr-border); line-height: 1.6;">Yes, we offer prompt home delivery across a 5km radius of our restaurant. Orders are dispatched immediately after preparation and arrive in 30 minutes or less in insulated hot bags.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item scroll-reveal" style="background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--border-radius-sm); overflow: hidden; transition: var(--transition-smooth);">
+                <button class="faq-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: transparent; border: none; font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--clr-text-dark); cursor: pointer; text-align: left;">
+                    <span>How do I book table reservation for large corporate dinners?</span>
+                    <i class="ri-arrow-down-s-line" style="font-size: 1.3rem; transition: var(--transition-fast); color: var(--clr-primary);"></i>
+                </button>
+                <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); background-color: var(--clr-bg-light);">
+                    <p style="padding: 20px 24px; margin: 0; font-size: 0.95rem; color: var(--clr-text-muted); border-top: 1px solid var(--clr-border); line-height: 1.6;">You can reserve online using the form on this page or call our operations desk directly. For parties larger than 10 people, we highly recommend booking at least 24 hours in advance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-out Shopping Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Shopping Cart (<span id="cart-drawer-count">0</span>)</h3>
+            <button class="close-cart-drawer" id="close-cart-btn"><i class="ri-close-line"></i></button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items-container">
+            <div class="empty-cart-message">
+                <i class="ri-shopping-basket-line"></i>
+                <p>Your cart is empty. Let's add some delicious dishes!</p>
+                <a href="menu.html" class="btn primary-btn" id="start-shopping-btn">Explore Menu</a>
+            </div>
+        </div>
+
+        <div class="cart-footer" id="cart-footer">
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+                <span>Estimated Tax (5%)</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line delivery-line">
+                <span>Delivery Charge</span>
+                <span id="cart-delivery" class="free-delivery">FREE</span>
+            </div>
+            <div class="summary-line total-line">
+                <span>Grand Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+
+            <button class="btn primary-btn checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Toast Box -->
+    <div class="alert-container" id="alert-container"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-box logo-box">
+                <a href="index.html" class="footer-logo">
+                    <img src="image/logo3.jpg" alt="Logo">
+                    <span>Sacred Spoon</span>
+                </a>
+                <p>Bringing you the taste of authentic Indian recipes. Hand-ground spices, traditional cooking, and a legacy of pure vegetarian gastronomy.</p>
+                <div class="symbol">
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Our Menu</a></li>
+                    <li><a href="about.html">Why Choose Us</a></li>
+                    <li><a href="blog.html">Culinary Blog</a></li>
+                    <li><a href="contact.html">Book a Table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Popular Dishes</h3>
+                <ul>
+                    <li><a href="menu.html">Crispy Onion Pakoda</a></li>
+                    <li><a href="menu.html">Classic Chole Bhature</a></li>
+                    <li><a href="menu.html">Smoky Dal Tadka</a></li>
+                    <li><a href="menu.html">Steamed Veg Momos</a></li>
+                    <li><a href="menu.html">Bombay Grilled Sandwich</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box newsletter-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive discount coupons, cooking tips, and festival menu updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="ri-send-plane-fill"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sacred Spoon Restaurant. All rights reserved. Made with love for Indian Culinary Heritage.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
